@@ -4,32 +4,40 @@
  // add input to take a number from 1 to 10
  // add button, filters todo by ^input number
  // pupolate todo list of userID todos
- 
- let arrayOfTodos = [
-  {
-  "userId": 14,
-  "id": 1,
-  "title": "delectus aut autem",
-  "completed": false
-},
-
-{
-  "userId": 20,
-  "id": 2,
-  "title": "delectus aut autem",
-  "completed": false
-}
-]
 
 let orderedListElement = document.querySelector('ol')
-let todoData = []
 
 const fetchTodos = () => {
   fetch('https://jsonplaceholder.typicode.com/todos')
   .then( (response) => response.json())
   .then( (json) => arrayOfTodos = json)
-      console.log('fetchTodos', fetchTodos)
+    console.log('fetchTodos', fetchTodos)
 }
-fetchTodos(
-  console.log('todoData', todoData)
-)
+
+const logTodos = () => {
+  console.log(arrayOfTodos)
+}
+/*const populateTodos = () => {
+  var ol = document.getElementById("todo-list");
+  ol.innerHTML = ``;
+  arrayOfTodos.forEach((x) => {
+    var li = document.createElement("li");
+    var span = document.createElement("span");
+    if (!x.completed) {
+      span.style = "color:red";
+    } else {
+      span.style = "color:green";
+    }
+    span.innerText = x.title;
+    li.appendChild(span);
+    ol.appendChild(li);
+  });
+};*/
+//let selectText = document.querySelector('userId');
+
+const populateTodos = () => {
+  var group = arrayOfTodos.userId + arrayOfTodos.title;
+  console.log(option)
+}
+ //   userId.innerHTML = ele.title + ele.userId[ele.selectedIndex].text + '</b> </br>' +
+  //      'Value of the Selected Text: <b>' + ele.title + '</b>';
